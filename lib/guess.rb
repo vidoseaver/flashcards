@@ -1,23 +1,30 @@
 require 'pry'
 
 class Guess
-  attr_reader :response, :card
+  attr_reader :user_answer, :card
 
-  def initialize(response, card)
-    @response = response
+  def initialize(user_answer, card)
+    @user_answer = user_answer
     @card = card
   end
 
   def correct?
-    @response == @card.answer
-  end
-
-  def feedback
-    if correct?
-      "Correct!"
+    if @user_answer == @card.answer
+      true
     else
-      "Incorrect!"
+      false
     end
   end
 
+  def response
+    @user_answer
+  end
+
+  def feedback
+    if @user_answer == @card.answer
+      "Correct!"
+    else
+      "Incorrect."
+    end
+  end
 end
