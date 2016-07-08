@@ -38,4 +38,20 @@ class Round
 
     (number_correct.to_f/@guesses.length) * 100
   end
+
+  def start
+    puts "Welcome! You're playing with 4 cards."
+    puts "--------------------------------------"
+    while @guesses.length < 4
+      puts "This is question #{@guesses.length + 1} of 4 "
+      puts "Question #{current_card.question}"
+      user_answer = gets.chomp
+      record_guess(user_answer)
+      puts "#{@guesses.last.feedback}"
+    end
+    puts "****** Game over! ******"
+    puts "You had #{number_correct} correct guesses out of #{@guesses.length} for a score of #{percent_correct} %."
+
+
+  end
 end

@@ -1,4 +1,4 @@
-require "pry"
+#require "pry"
 
 class CardGenerator
 
@@ -16,3 +16,7 @@ class CardGenerator
 
 
   end
+
+  tester = CardGenerator.new("cards.txt")
+
+  tester
